@@ -1,5 +1,12 @@
 # Counts monthly issues by tag from event logs
 def monthly_issue(events):
+    """
+    Counts issues grouped by month and tag.
+
+    Takes a list of event strings in the format "[TAG] YYYY-MM-DD description"
+    and returns a dictionary with monthly, tag-wise issue counts.
+    Events not matching the expected format are ignored.
+    """
     count = {}
     for issue in events :
         if not issue.startswith("["):
