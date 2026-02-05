@@ -55,7 +55,13 @@ def monthly_issue(events):
 
         count[month][tag] = count[month].get(tag, 0) + 1
 
-    return count
+    stable_count = {}
+
+    for month in sorted(count):
+        stable_count[month] = dict(sorted(count[month].items()))
+
+    return stable_count
+
 
 
 if __name__ == "__main__":
