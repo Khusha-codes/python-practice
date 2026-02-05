@@ -1,5 +1,24 @@
 def monthly_issue(events):
-    # 1️⃣ Validate input type considered serious error
+    """
+    Counts issues month-wise and tag-wise from a list of event strings.
+
+    Expected input format:
+        [TAG] YYYY-MM-DD description
+
+    Parameters:
+        events (list): A list of event strings.
+
+    Returns:
+        dict: A dictionary with month as key and tag counts as values.
+
+    Raises:
+        TypeError: If events is not a list.
+
+    Notes:
+        - Non-string entries are ignored safely.
+        - Malformed strings are skipped.
+    """
+    # Validate input type considered serious error
     if not isinstance(events, list):
         raise TypeError(
             "monthly_issue() expects a list of event strings "
@@ -9,7 +28,7 @@ def monthly_issue(events):
     count = {}
 
     for issue in events:
-        # 2️⃣ Skip invalid entries safely
+        # Skip invalid entries safely
         if not isinstance(issue, str):
             continue
 
