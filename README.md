@@ -49,7 +49,7 @@ category-based data, as long as the input follows:
 
 [CATEGORY] YYYY-MM-DD description
 
-## Error Handling
+### Error Handling
 
 - Raises `TypeError` if input is not a list
 - Safely ignores:
