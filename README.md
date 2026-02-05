@@ -23,8 +23,11 @@ Each event must follow this format:
 Invalid or malformed entries are ignored.
 
 ### Output
-Returns a dictionary containing month-wise, tag-wise counts.
+The function guarantees stable output:
+- Months are sorted chronologically
+- Tags are sorted alphabetically
 
+This ensures predictable results for testing and reuse.
 #### Example
 
 ```python
@@ -46,7 +49,10 @@ category-based data, as long as the input follows:
 
 [CATEGORY] YYYY-MM-DD description
 
-### Error Handling
+## Error Handling
 
-The function validates the input type and raises a TypeError if the provided input is not a list.
-Invalid or malformed entries inside the list are safely ignored and do not affect the final result.
+- Raises `TypeError` if input is not a list
+- Safely ignores:
+  - Non-string entries
+  - Malformed event strings
+  - Incorrect date formats
