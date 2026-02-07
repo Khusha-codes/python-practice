@@ -1,4 +1,4 @@
-def monthly_issue(events):
+def monthly_issue(events: list[str]) -> dict:
     """
     Counts issues month-wise and tag-wise from a list of event strings.
 
